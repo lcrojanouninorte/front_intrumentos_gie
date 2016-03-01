@@ -1,6 +1,6 @@
 <div class="container-fluid " data-sr-container='{ "reset":true, "vFactor": 0.1 }'>
  <!-- Use the simple syntax -->
-<div cg-busy="result"></div>
+<div cg-busy="{promise:result,message:'Cargando',backdrop:true}"></div>
    
     <div class="row" style="margin-top:30px" id="survey">
         <a name="survey" href></a>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="panel-body">
                     <form name="characterizationForm" class="form-horizontal" role="form" novalidate>
-                        <p>Bienvenido {{get_user_mail()}} </p>
+                        <p> {{get_user_mail()}} </p>
                         <tabset class="tabs-left col-sm-12">
                             <tab class="col-md-12" ng-repeat="page in icaiCtrl.pages" active="page.active" ng-click="icaiCtrl.setTitle(sessions[page.key].title)">
                                 <tab-heading>{{sessions[page.key].title}}

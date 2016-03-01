@@ -9,7 +9,7 @@
     function InstrumentsController($cookies, $log, drupal, $scope) {
       var vm = this;
       $log.debug('cookies en instrument', $cookies);
-    /*   $scope.profile = drupal_user;
+       $scope.profile = drupal_user;
        if($scope.profile==null){
         alert("no hay perfil beneficiarios");
        }
@@ -30,7 +30,7 @@
           else { alert('Please login.');  }
         });
        }
-*/
+
 
     }
 })();

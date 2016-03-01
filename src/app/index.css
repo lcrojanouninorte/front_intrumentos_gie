@@ -11,9 +11,37 @@
   width: 100%;
   min-height: 400px;
 }
-.nav-tabs {
-    background: #191919!important;
+
+.instrumentos-gie-wrapper ul.nav.nav-tabs {
+    background-color: transparent!important;
 }
+
+#instrumentos-modulo .nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    background-color: transparent !important;
+    border: 0 !important;
+    color: black !important;
+    font-weight: 500;
+}
+
+ tab-heading.ng-binding.ng-scope {
+    color: black!important;
+}
+ tab-heading.ng-binding.ng-scope:hover {
+    color: #F9B233!important;
+    border-color: #F9B233!important;
+}
+
+tab-heading.ng-binding.ng-scope {
+    color: black;
+}
+
+.nav-tabs > li > a {
+    background-color: transparent !important;
+    border: 0 !important;
+    color: #343434 !important;
+    font-weight: 500;
+}
+
   .thumbnail {
     height: 200px;
 }
