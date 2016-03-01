@@ -460,18 +460,8 @@ angular.module('vr.directives.slider', ['ngTouch']).directive('slider',
                     "<span class='pointer low'></span><span class='pointer high'></span>" + // current value bubbles
                     "<span class='bubble low'></span><span class='bubble high'></span><span class='bubble middle'></span><span class='bubble selection'></span>" + // low, high, middle and selection bubbles
                     "<span class='bubble limit floor'></span><span class='bubble limit ceiling'></span>" + // upper and lower limit bubbles
-                    "<input type='range' class='input low' /><input type='range' class='input high' /><input type='range' class='input selection' />"+ // range sliders used for browsers that support them
-    '<div class="pips col-xs-12" >'+
-    '    <span class="ui-slider-pip" style="left: 10%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">10</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 20%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">20</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 30%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">30</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 40%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">40</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 50%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">50</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 60%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">60</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 70%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">70</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 80%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">80</span></span>'+
-    '    <span class="ui-slider-pip" style="left: 90%;"><span class="ui-slider-line-pip"></span><span class="ui-slider-line">90</span></span>'+
-    '</div>',
+                    "<input type='range' class='input low' /><input type='range' class='input high' /><input type='range' class='input selection' />", // range sliders used for browsers that support them
+
                 compile: function(element, attributes) {
                     // are we gonna show the step bubbles?
                     var showSteps = attributes.showSteps;

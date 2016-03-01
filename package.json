@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "gulp-class-prefix": "^1.0.1",
-    "gulp-css-resolve-relative-urls": "0.0.2"
+    "gulp-css-resolve-relative-urls": "0.0.2",
+    "gulp-rename": "^1.2.2"
   },
   "scripts": {
     "test": "gulp test"

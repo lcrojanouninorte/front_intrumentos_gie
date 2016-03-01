@@ -19,14 +19,14 @@
                         <div class="small-box  bg-orange animated fadeInUp">
                             <div class="inner">
                                 <!-- <h3>50<sup style="font-size: 20px">%</sup></h3>-->
-                                <h3>Fase 1</h3>
-                                <p>Instrumento 1</p>
-                                <p>ICAI</p>
+                                <h3>ICAI</h3>
+                                <p class="explanation">El Instrumento de Caracterización de la Actividad Innovadora</p>
+                                <p>(Ya se encuentran disponibles los resultados en su dashboard)</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-ios-book-outline"></i>
                             </div>
-                            <a ng-href="#icai" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
+                            <a ui-sref="icai" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -35,29 +35,29 @@
                         <div class="small-box bg-orange animated fadeInUp delay3">
                             <div class="inner">
                                 <!-- <h3>50<sup style="font-size: 20px">%</sup></h3>-->
-                                <h3>Fase 2</h3>
-                                <p>Instrumento 2</p>
-                                <p>MiIndex</p>
+                                <h3>Mindex</h3>
+                                 <p class="explanation">Mide la percepción interna de la cultura de innovación.</p>
+                                 <p>(Puede ver los resultados en tiempo real al ingresar.)</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a ng-href="#imi" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
+                            <a ui-sref="imi" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
                     <div class="col-lg-4 col-xs-12">
                         <!-- small box -->
-                        <div class="small-box bg-orange animated fadeInUp delay5 hvr-grow">
+                        <div class="small-box bg-orange animated fadeInUp delay5">
                             <div class="inner">
-                                <h3>Fase 3</h3>
-                                <p>Instrumento 3</p>
+                                <h3>ACAP</h3>
+                                <p class="explanation">Mide de la capacidad de absorción de las empresas.</p>
                                 <p>ACAP</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-ios-settings"></i>
                             </div>
-                              <a ng-href="#acap" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
+                              <a ui-sref="acap" class="small-box-footer">Ir al Instrumento <i class="ion-compose"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -69,4 +69,11 @@
     </div>
     <!-- /.content-wrapper -->
 </div>
-<!-- ./wrapper -->
+<!-- ./wrapper 
+<div class="row">
+    
+    <button ng-click="prueba()">prueba</button>
+<div>
+    {{profile | json}}
+</div>-->
+</div>

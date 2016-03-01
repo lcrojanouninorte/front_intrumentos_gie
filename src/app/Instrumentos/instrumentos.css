@@ -18,6 +18,8 @@ html,
   .layout-boxed body {
   height: 100%;
 }
+
+
   body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -171,15 +173,7 @@ html,
   -o-transition: none;
   transition: none;
 }
-/* Content */
-.content {
-  min-height: 500px;
-  padding: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+
 /* H1 - H6 font */
 h1,
   h2,
@@ -1468,15 +1462,27 @@ a {
  * Component: Small Box
  * --------------------
  */
+
+ .explanation{
+font-size: 1.2em!important;
+font-weight: bold;
+}
 .small-box {
-  border-radius: 2px;
+  color: white!important;
+  border-radius: 3px;
   position: relative;
   display: block;
   margin-bottom: 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  min-height: 150px;
+}
+.small-box h3{
+  color: white!important;
+  
 }
   .small-box > .inner {
   padding: 10px;
+  min-height: 150px;
 }
   .small-box > .small-box-footer {
   position: relative;
@@ -4282,7 +4288,7 @@ table.text-center,
   background-color: #01ff70 !important;
 }
   .bg-orange {
-  background-color: #ff851b !important;
+    background-color: #F9B233 !important;
 }
   .bg-fuchsia {
   background-color: #f012be !important;

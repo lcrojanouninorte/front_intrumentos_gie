@@ -11,7 +11,7 @@
    // RestangularProvider.setBaseUrl('https://surveyapi.herokuapp.com/');
     //RestangularProvider.setBaseUrl('http://localhost:3002/');
     RestangularProvider.setFullResponse(true);
-   delete $httpProvider.defaults.headers.common["X-Requested-With"];
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
    // window.sr = new scrollReveal();
 
     // Enable log
@@ -23,5 +23,16 @@
     toastr.options.preventDuplicates = true;
     toastr.options.progressBar = true;
   }
+// The angular-drupal configuration settings for my simple app.
+angular.module('angular-drupal').config(congig_drupal);
+
+function congig_drupal($provide) {
+
+  $provide.value('drupalSettings', {
+    sitePath: 'http://giecaribe-local.com/giecaribe_portal/',
+    endpoint: 'api'
+  });
+
+}
 
 })();

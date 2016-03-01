@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../bower_components/ng-dialog/css/ngDialog-theme-default.css" />
     <link rel="stylesheet" href="../bower_components/angular-centered/angular-centered.css" />
     <link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -76,12 +77,13 @@
     <!-- endbuild -->
   </head>
   <body id="instrumentos-modulo">
+  <div class="instrumentos-gie-wrapper">
   
 
     <!--[if lt IE 10]>
       <p class="browsehappy">Usted esta usando un explorador <strong>muy antiguo</strong>. Por favor <a href="http://browsehappy.com/">Actualice su explorador</a> Para Mejorar su experiencia en este sitio.</p>
     <![endif]-->
-<acme-navbar  ></acme-navbar>
+<!--<acme-navbar  ></acme-navbar>-->
     <div ui-view></div>
 
     <!-- build:js(src) scripts/vendor.js -->
@@ -117,9 +119,14 @@
     <script src="../bower_components/angular-centered/angular-centered.js"></script>
     <script src="../bower_components/Chart.js/Chart.js"></script>
     <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-drupal/src/angular-drupal.js"></script>
     <script src="../bower_components/ng-tasty/ng-tasty-tpls.min.js"></script>
     <script src="../bower_components/angular-validation/dist/angular-validation.js"></script>
     <script src="../bower_components/angular-validation/dist/angular-validation-rule.js"></script>
+    <script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -131,25 +138,26 @@
     <script src="app/components/sponsors/sponsors.directive.js"></script>
     <script src="app/components/slider/slider.directive.js"></script>
     <script src="app/components/navbar/navbar.directive.js"></script>
-    <script src="app/components/malarkey/malarkey.directive.js"></script>
     <script src="app/components/modals/modal.controller.js"></script>
+    <script src="app/components/malarkey/malarkey.directive.js"></script>
     <script src="app/components/instrument/instrument.service.js"></script>
     <script src="app/components/inputScala/inputScala.directive.js"></script>
     <script src="app/components/inputOrder/inputOrder.directive.js"></script>
-    <script src="app/components/ciiuv_4/ciiuv_revs.service.js"></script>
-    <script src="app/components/ciiuv_4/ciiuv.directive.js"></script>
+    <script src="app/components/drupal_current_user/drupal_current_user.js"></script>
     <script src="app/components/githubContributor/githubContributor.service.js"></script>
     <script src="app/components/auth/auth.service.js"></script>
+    <script src="app/components/ciiuv_4/ciiuv_revs.service.js"></script>
+    <script src="app/components/ciiuv_4/ciiuv.directive.js"></script>
     <script src="app/InstrumentosAux/InstrumentoAux1/instrumentoAux1.controller.js"></script>
     <script src="app/results/results.controller.js"></script>
-    <script src="app/main/main.controller.js"></script>
     <script src="app/login/login.controller.js"></script>
+    <script src="app/main/main.controller.js"></script>
     <script src="app/Password/resetPassword.controller.js"></script>
     <script src="app/Instrumentos/instrumentos.controller.js"></script>
     <script src="app/InstrumentoIMI/imi.controller.js"></script>
-    <script src="app/InstrumentoACAP/acap.controller.js"></script>
     <script src="app/InstrumentoICAI/icai.directives.js"></script>
     <script src="app/InstrumentoICAI/icai.controller.js"></script>
+    <script src="app/InstrumentoACAP/acap.controller.js"></script>
     <script src="app/index.run.js"></script>
     <script src="app/index.route.js"></script>
     <script src="app/index.directives.js"></script>
@@ -162,10 +170,12 @@
     <!-- endinject -->
     <!-- endbuild -->
  <div class="row">
-     <sponsors class="col-sm-12"></sponsors>    
+   <!--  <sponsors class="col-sm-12"></sponsors>    -->
+ </div>
  </div>
   <div class="footer col-xs-12 text-center">
         <p>© 2015 GIE. Todos los Derechos Reservados |   <a href="#" >Instrumento de caracterización de la actividad innovadora</a> </p>
     </div>
+
   </body>
 </html>

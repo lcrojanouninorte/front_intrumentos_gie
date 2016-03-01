@@ -6,7 +6,7 @@
         .controller('AcapController', AcapController);
 
     /** @ngInject */
-    function AcapController(auth, instrument, $scope, $cookies, $timeout, $stateParams, $log) {
+    function AcapController(auth, instrument, $scope, $cookies, $timeout, $stateParams, $log, user_nit) {
         var vm = this;
         $scope.user = auth.getUser();
         $scope.finished = false;
@@ -197,7 +197,8 @@
 
 
         //get response
-        $scope.user_id = $cookies.get("user_id");
+     //   $scope.user_id = $cookies.get("user_id");
+       $scope.user_id =  user_nit;
         $scope.user_consult=$stateParams.id;
         if($scope.user_consult !== "" && typeof($scope.user_consult)!=="undefined" ){
             $scope.user_id = $scope.user_consult;

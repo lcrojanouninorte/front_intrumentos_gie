@@ -6,10 +6,7 @@
     "huei90"
   ],
   "description": "Client-side Validation for AngularJS",
-  "main": [
-    "dist/angular-validation.js",
-    "dist/angular-validation-rule.js"
-  ],
+  "main": ["dist/angular-validation.js", "dist/angular-validation-rule.js"],
   "keywords": [
     "angular",
     "angularjs",

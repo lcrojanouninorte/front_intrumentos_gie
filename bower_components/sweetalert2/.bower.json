@@ -24,12 +24,12 @@
     "sweetalert.gif"
   ],
   "license": "MIT",
-  "version": "0.3.3",
-  "_release": "0.3.3",
+  "version": "0.3.4",
+  "_release": "0.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "v0.3.3",
-    "commit": "4a4f82d52ef577f886fac8eafbffa96a1a487eea"
+    "tag": "v0.3.4",
+    "commit": "1ea87eedbd2ccf3796a232d14cde53be4188f948"
   },
   "_source": "git://github.com/limonte/sweetalert2.git",
   "_target": ">=0.1.9",

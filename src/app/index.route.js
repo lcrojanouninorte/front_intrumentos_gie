@@ -34,7 +34,7 @@
                 controller: 'InstrumentsController',
                 controllerAs: 'instCtrl',
                 authenticate: false
-            }).state('login', {
+            })/*.state('login', {
                 url: '/login',
                 templateUrl: 'app/login/login.html',
                 controller: 'LoginController',
@@ -86,13 +86,13 @@
                 controller: 'AcapController',
                 controllerAs: 'acapCtrl',
 
-            }).state('instrumento_aux1', {
+            })*/.state('instrumento_aux1', {
                 url: '/instrumentoAux1',
                 templateUrl: 'app/InstrumentosAux/InstrumentoAux1/instrumentoAux1.html',
                 controller: 'InstAux1Controller',
                 controllerAs: 'vm',
 
-            }).state('password_reset', {
+            })/*.state('password_reset', {
                 url: '/password/reset?:token',
                 templateUrl: 'app/Password/resetPassword.html',
                 controller: 'ResetPasswordController',
@@ -125,9 +125,9 @@
                 }
 
 
-            });
+            })*/;
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/instrumentos');
     }
 
 })();

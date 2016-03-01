@@ -265,7 +265,7 @@
         function getAnswers(type, user_id) {
             var new_answers = (JSON.parse(JSON.stringify(answers_structs[type])));
             $log.info("obteniendo instrumento" + type + " de :" + user_id);
-            return $http.get(apiHost + type + "?" + "user_id=" + user_id)
+            return $http.get(apiHost + type + "?" + "nit=" + user_id)
                 .then(getAnswersComplete)
                 .catch(getAnswersFailed);
 

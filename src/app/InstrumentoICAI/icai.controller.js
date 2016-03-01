@@ -7,10 +7,15 @@
    
 
     /** @ngInject */
-    function IcaiController(auth, instrument, $scope, $cookies, $timeout, $stateParams, $log) {
-        var vm = this;
+    function IcaiController(auth, instrument, $scope, $cookies, $timeout, $stateParams, $log,drupal_current_user) {
 
-        $scope.user = auth.getUser();
+        //inicializar variables independientes
+        var vm = this;
+        $scope.user_nit = drupal_current_user.getUser();
+        $scope.result = instrument.getAnswers("icai",  $scope.user_nit);
+        $scope.result.then(function(data) {
+        console.log("Nit del usuario: "+$scope.user_nit);
+        $scope.user = drupal_current_user.getUser();
         $scope.finished = false;
         vm.panelTitle = "";
         vm.page = 0;
@@ -196,32 +201,40 @@
         };
 
         vm.changePage = function(page) {
+            //verificar si el usuario ya esta logeado:
+            if(drupal_current_user.isLogged){
             //obtener tab activ y el indice
-            var active = vm.tabActive();
-            var index = $.inArray(active, vm.pages);
-            instrument.setAnswers("icai",$scope.user_id, $scope.answers);
+                var active = vm.tabActive();
+                var index = $.inArray(active, vm.pages);
+                instrument.setAnswers("icai",$scope.user_id, $scope.answers);
 
 
-            if (index === 0 && page === -1) {
-                vm.page = vm.pages.length - 1;
+                if (index === 0 && page === -1) {
+                    vm.page = vm.pages.length - 1;
+                    vm.pages[vm.page].active = true;
+                    vm.panelTitle = $scope.sessions[vm.pages[vm.page].key].title;
+                    return true;
+                }
+
+                if (index === (vm.pages.length - 1) && page === 1) {
+                    vm.page = 0;
+                    vm.pages[vm.page].active = true;
+                    vm.panelTitle = $scope.sessions[vm.pages[vm.page].key].title;
+                    return true;
+                }
+
+                vm.page = index + page;
                 vm.pages[vm.page].active = true;
                 vm.panelTitle = $scope.sessions[vm.pages[vm.page].key].title;
-                return true;
+
+                //actualizar en db
+
+
+            }else{
+                //solicitar login mediante popup.
+                alert("debes logearte!");
             }
-
-            if (index === (vm.pages.length - 1) && page === 1) {
-                vm.page = 0;
-                vm.pages[vm.page].active = true;
-                vm.panelTitle = $scope.sessions[vm.pages[vm.page].key].title;
-                return true;
-            }
-
-            vm.page = index + page;
-            vm.pages[vm.page].active = true;
-            vm.panelTitle = $scope.sessions[vm.pages[vm.page].key].title;
-
-            //actualizar en db
-
+           
               
               $timeout(function(){$scope.refreshSlider();}, 100); 
      
@@ -300,7 +313,7 @@
             }, true);
 
        
-$log.debug("salio de a icai active", $cookies);
+            $log.debug("salio de a icai active", $cookies);
         }
 
         $scope.isLastPage = function(){
@@ -323,17 +336,20 @@ $log.debug("salio de a icai active", $cookies);
             $scope.finished = true;
 
              instrument.setAnswers("icai",$scope.user_id, $scope.answers);
+
+             //TODO: redireccionar al profile
         };
 
 
 
         //get response
-        $scope.user_id = $cookies.get("user_id");
+        //$scope.user_id = $cookies.get("user_id");
+        $scope.user_id = $scope.user_nit
         $scope.user_consult=$stateParams.id;
         if($scope.user_consult !== "" && typeof($scope.user_consult)!=="undefined" ){
             $scope.user_id = $scope.user_consult;
         }
-        instrument.getAnswers("icai", $scope.user_id).then(function(data) {
+     
 
             //$scope.answers = data;
             if (!$.isEmptyObject(data) && data != null && typeof(data.s1) != "undefined") {

@@ -6,7 +6,7 @@
         .controller('ImiController', ImiController);
 
     /** @ngInject */
-    function ImiController(auth, instrument, $scope, $cookies, $timeout, $stateParams) {
+    function ImiController(auth, instrument, $scope, $cookies, $timeout, $stateParams, user_nit) {
 
 
           $scope.chart_options = {
@@ -147,7 +147,8 @@
 
 
         //get response
-        $scope.user_id = $cookies.get("user_id");
+       // $scope.user_id = $cookies.get("user_id");
+        $scope.user_id = user_nit;
         $scope.user_consult=$stateParams.id;
         if($scope.user_consult !== "" && typeof($scope.user_consult)!=="undefined" ){
             $scope.user_id = $scope.user_consult;
